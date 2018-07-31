@@ -24,7 +24,7 @@ public class CarLotApp {
 		double milage = 0;
 		boolean listCars = true;
 		// format variable
-		String format = "%s." + "%-8s    %-8s        %-6s        $%-8s        %-8s      %n";
+		String format = "%s." + "%-8s    %-8s        %-6s        $%,-8d        %,-12d      %n";
 
 		// List of new Cars
 		Car car1 = new Car("Ford", "Focus", 2017, 14000.00);
@@ -71,8 +71,8 @@ public class CarLotApp {
 
 					}
 
-					System.out.printf(format, i + 1, item.getMake(), item.getModel(), item.getYear(), item.getPrice(),
-							milage);
+					System.out.printf(format, i + 1, item.getMake(), item.getModel(), item.getYear(),
+							(int) item.getPrice(), (int) milage);
 
 				}
 
