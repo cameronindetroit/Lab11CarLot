@@ -24,7 +24,7 @@ public class CarLotApp {
 		double milage = 0;
 		boolean listCars = true;
 		// format variable
-		String format = "%s.)" + "%-8s    %-8s        %-6s        $%-6s        %-6s      %n";
+		String format = "%s." + "%-8s    %-8s        %-6s        $%-8s        %-8s      %n";
 
 		// List of new Cars
 		Car car1 = new Car("Ford", "Focus", 2017, 14000.00);
@@ -61,7 +61,6 @@ public class CarLotApp {
 
 			} else if (userInput.toLowerCase().equals("list all cars")) {
 				// List All Cars
-
 				for (int i = 0; i < cars.size(); i++) {
 
 					Car item = cars.get(i);
@@ -77,18 +76,21 @@ public class CarLotApp {
 
 				}
 
+				// Add car
 			} else if (userInput.toLowerCase().equals("add car")) {
 
 				cars.add(ScannerMethods.UserCarFormatted());
 				System.out.println("Your car has been added.");
 				scnr.nextLine();
 
+				// add used car
 			} else if (userInput.toLowerCase().equals("add used car")) {
 
 				cars.add(ScannerMethods.UserUsedCarFormatted());
 				System.out.println("Your used car has been added.");
 				scnr.nextLine();
 
+				// remove car
 			} else if (userInput.toLowerCase().equals("remove car")) {
 
 				System.out.println("Which Car would you like to remove? Pick a number");
@@ -96,12 +98,14 @@ public class CarLotApp {
 				cars.remove(userNumber - 1);
 				scnr.nextLine();
 
+				// look up car
 			} else if (userInput.toLowerCase().equals("look up car")) {
 				System.out.println("Which car would you like to lookup? pick a number");
 				userNumber = Validator.getInt(scnr, "", 1, cars.size());
 				System.out.println(cars.get(userNumber).toString());
 				scnr.nextLine();
 
+				// Input does not exist
 			} else {
 				System.out.println(
 						"item does not exits.\nPlease type (add car, add used car, remove car, look up car, or quit)");
